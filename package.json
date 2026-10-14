@@ -1,0 +1,28 @@
+{
+  "name": "comercio-eletronico-solid",
+  "version": "1.0.0",
+  "description": "Refatoração do projeto de comércio eletrônico aplicando princípios SOLID",
+  "main": "src/servidor.ts",
+  "scripts": {
+    "desenvolver": "node --watch --import tsx src/servidor.ts",
+    "verificar": "tsc --noEmit",
+    "prisma:gerar": "prisma generate",
+    "prisma:migrar": "node --import tsx prisma/prepararBanco.ts && prisma migrate deploy",
+    "prisma:popular": "node --import tsx prisma/popular.ts",
+    "testar": "node --import tsx verificacoes/pedidos.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.0.0",
+    "express": "^4.21.0",
+    "nodemailer": "^7.0.11",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.19.27",
+    "@types/nodemailer": "^7.0.4",
+    "prisma": "^6.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}
